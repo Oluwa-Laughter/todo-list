@@ -35,7 +35,7 @@ input[type="text"] {
 
 .container {
   max-width: 30rem;
-  margin: 1rem auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
