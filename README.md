@@ -2,7 +2,7 @@
 
 This is a simple Todo List app built using ReactJS. The app allows users to add, delete, edit and mark tasks as complete. It also provides sorting functionality to organize the todo list.
 
-- Live Site URL: [Todo App](https://laughter-todo-app.netlify.app/)
+- Live Site URL: [Todo List App](https://laughter-todo-app.netlify.app/)
 
 ## Features
 
