@@ -14,19 +14,21 @@ body {
 h1 {
   font-size: 3rem;
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 label {
   font-size: 1.6rem;
-  color: #dacdcd;
+  color: #e5dede;
   margin-bottom: 0.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 input[type="text"] {
   width: 100%;
   padding: 0.4rem 0.8rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   border: none;
   border-radius: 0.4rem;
 }
@@ -55,16 +57,21 @@ input[type="text"] {
 .btn {
   width: 100%;
   padding: 0.4rem 0.8rem;
-  background-color: #fff;
-  font-size: 1.2rem;
   text-transform: uppercase;
   border: none;
   border-radius: 0.4rem;
   cursor: pointer;
+  color: #000;
+  background: #f2f2f2;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn:hover {
-  background-color: #f2f2f2;
+  background-color: #dbd7d7;
 }
 
 .todo-list {
@@ -80,7 +87,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  width: 80%;
+  width: 90%;
 }
 
 .todo-task {
@@ -88,16 +95,19 @@ ul {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.4rem 0.8rem;
+  padding: 1.8rem 0.9rem;
   background-color: #f2f2f2;
   border-radius: 0.4rem;
   cursor: pointer;
-  height: 2.5rem;
+  height: 3rem;
 }
 
-.todo-task span {
+.todo-text {
   font-size: 1rem;
   text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .todo-task input[type="checkbox"] {
@@ -117,22 +127,38 @@ select {
 }
 
 .edit-form {
-}
-
-.edit-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
 }
 
 .save-btn {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  color: #000;
 }
 
 .edit-del-btn {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .edit-del-btn button {
-  background-color: none;
+  background: none;
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  color: #000;
+}
+
+.edit-del-btn button:hover {
+  background: #dbd7d7;
 }

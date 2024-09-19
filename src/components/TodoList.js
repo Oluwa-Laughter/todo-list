@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import SendIcon from "@mui/icons-material/Send";
+import EditSharpIcon from "@mui/icons-material/EditSharp";
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 
 export default function TodoList({
   todos,
@@ -62,6 +65,9 @@ function TodoTask({
   const handleEditSubmit = (e) => {
     e.preventDefault();
     onEditTodo(todo.id, newText);
+
+    if (!newText.trim()) return;
+
     setEditId(null);
   };
 
@@ -73,35 +79,34 @@ function TodoTask({
 
   return (
     <div className="todo-task">
-      <div>
-        {isEditing ? (
-          <form onSubmit={handleEditSubmit} className="edit-form">
-            <input
-              type="text"
-              value={newText}
-              onChange={(e) => setNewText(e.target.value)}
-              className="edit-input"
-            />
-            <button type="submit" className="save-btn">
-              Save
-            </button>
-          </form>
-        ) : (
-          <>
-            <input
-              type="checkbox"
-              defaultChecked={todo.completed}
-              onClick={() => onComplete(todo.id)}
-            />
+      {isEditing ? (
+        <form onSubmit={handleEditSubmit} className="edit-form">
+          <input
+            type="text"
+            value={newText}
+            onChange={(e) => setNewText(e.target.value)}
+            className="edit-input"
+          />
+          <button type="submit" className="save-btn">
+            <SendIcon />
+          </button>
+        </form>
+      ) : (
+        <div className="todo-text">
+          <input
+            type="checkbox"
+            defaultChecked={todo.completed}
+            onClick={() => onComplete(todo.id)}
+          />
 
-            <span
-              style={todo.completed ? { textDecoration: "line-through" } : {}}
-            >
-              {todo.text}
-            </span>
-          </>
-        )}
-      </div>
+          <span
+            style={todo.completed ? { textDecoration: "line-through" } : {}}
+          >
+            {todo.text}
+          </span>
+        </div>
+      )}
+
       <div className="task-buttons">
         {!isEditing && (
           <TodoBtn
@@ -118,8 +123,13 @@ function TodoTask({
 function TodoBtn({ todo, onDeleteTodo, setEditId }) {
   return (
     <div className="edit-del-btn">
-      <button onClick={() => setEditId(todo.id)}>edit</button>
-      <button onClick={() => onDeleteTodo(todo.id)}>❌</button>
+      <button onClick={() => setEditId(todo.id)} className="edit-btn">
+        <EditSharpIcon />
+      </button>
+
+      <button onClick={() => onDeleteTodo(todo.id)} className="delete-btn">
+        <DeleteForeverOutlinedIcon />
+      </button>
     </div>
   );
 }

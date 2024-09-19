@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AddIcon from "@mui/icons-material/Add";
 
 export default function Form({ onAddTodos }) {
   const [text, setText] = useState("");
@@ -26,8 +27,10 @@ export default function Form({ onAddTodos }) {
         autoComplete="off"
         onChange={(e) => setText(e.target.value)}
       />
+
       <button type="submit" className="btn">
-        Add
+        <AddIcon />
+        <span>Add</span>
       </button>
     </form>
   );
