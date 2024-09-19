@@ -24,11 +24,12 @@ export default function App() {
   };
 
   const handleEditTodo = (id, newText) => {
-    const editTodo = todos.map((todo) =>
-      editId === id ? { ...todo, newText } : todo
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, text: newText } : todo
+      )
     );
 
-    setTodos(editTodo);
     setEditId(null);
   };
 
@@ -40,9 +41,9 @@ export default function App() {
         todos={todos}
         onDeleteTodo={handleDeleteTodo}
         onComplete={handleComplete}
+        onEditTodo={handleEditTodo}
         editId={editId}
         setEditId={setEditId}
-        onEditTodo={handleEditTodo}
       />
     </div>
   );
